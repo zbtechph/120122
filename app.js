@@ -1,7 +1,7 @@
 const express = require("express")
-const seedrandom = require("seedrandom")
+//const seedrandom = require("seedrandom")
 
-const rng = seedrandom(seed)
+//const rng = seedrandom(seed)
 
 const app = express()
 
