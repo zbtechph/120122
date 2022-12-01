@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lottery app</title>
+    </head>
+    <body>
+        <form action="/execute" method="POST">
+            <div>
+                <label>Seed</label>
+                <input type="text" name="seed"/>
+            </div>
+            <div>
+                <label>Prize Count</label>
+                <input type="number" name="prizeCount"/>
+            </div>
+            <div>
+                <label>Entries (json)</label>
+                <textarea name="entries"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
