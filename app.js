@@ -1,8 +1,6 @@
 const express = require("express")
 const seedrandom = require("seedrandom")
 
-const rng = seedrandom(seed)
-
 const app = express()
 
 app.use(express.urlencoded({
