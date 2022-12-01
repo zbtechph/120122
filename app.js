@@ -1,6 +1,7 @@
 const express = require("express")
 const seedrandom = require("seedrandom")
 const sha256 = require('js-sha256')
+const port = process.env.port ?? 3000
 
 const app = express()
 
@@ -22,6 +23,6 @@ app.post('/execute', (req, res) => {
 });
 
 
-app.listen(4749, () => {
-    console.log("listening on port 4749")
+app.listen(port, () => {
+    console.log("listening on port "+port)
 })
