@@ -17,7 +17,8 @@ app.post('/execute', (req, res) => {
     const finalSeed = sha256(seed ?? "DefaultSeed")
     const rng = seedrandom(finalSeed)
     const draw = entries.map(entry => ({name: entry, rand: rng()})).sort((a,b) => a.rand-b.rand)
-    res.send(JSON.stringify(draw.splice(0,parseInt(prizeCount ?? 1))))
+    const winners = draw.splice(0, parseInt(prizeCount ?? 1)).map(w=>w.name)
+    res.send(JSON.stringify({ winners, entries: draw }))
 });
 
 
