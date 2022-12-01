@@ -13,7 +13,7 @@ app.post('/execute', (req, res) => {
     const { seed, prizeCount } = req.body
     const entries = JSON.parse(req.body.entries)
     const rng = seedrandom(seed)
-    const draw = entries.map(entry, ({name: entry, rand: rng()})).sort((a,b)=>a.rand-b.rand)
+    const draw = entries.map(entry => ({name: entry, rand: rng()})).sort((a,b) => a.rand-b.rand)
     res.send(JSON.stringify(draw.splice(0,prizeCount)))
 });
 
